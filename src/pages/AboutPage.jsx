@@ -1,5 +1,5 @@
-//Pages are just a bigger building block/component structure
-//Same rules about imports/export here as they do for component jsx files
+// Pages are just components too — bigger building blocks, usually rendered by a route
+// They follow the same import/export rules as any other component file
 
 export default function AboutPage() {
   return (

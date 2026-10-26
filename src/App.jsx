@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 
-// Outlet is a dynamic component, iuts conbtent changes depending on the url.
-//outlet checks if ythere are any children-paths matching the url endpoint, and displays them if there is
-//Oulet does not specify with child it routes to, it is mainly a tag to access and fetch the children in our router file and display them on the page
+// <Outlet /> is a placeholder — its content changes depending on the current URL.
+// It checks the router's children array for a path matching the URL, and renders that component here.
+// Outlet doesn't know which child it renders — it just displays whatever route config points to it.
 
 function App() {
   return (

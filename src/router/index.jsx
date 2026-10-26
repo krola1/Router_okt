@@ -5,29 +5,29 @@ import HomePage from "../pages/HomePage";
 import ProductDetails from "../pages/ProductDetails";
 import ProductPage from "../pages/ProductPage";
 
-// createBroserRrouter takes in an array as an atgument, this array is populatetd with "routing obcjects"
+// createBrowserRouter takes an array of "route objects" as its argument
 export const myRouter = createBrowserRouter([
-  //a routing object contains two main parts, a url path (string) and a element to render (Component)
-  // a elemnent can be imported as a regular component, or written directly inline
+  // A route object has two main parts: a URL path (string) and an element to render (a component)
+  // The element can be an imported component, or written directly inline
   {
     path: "/",
     element: <App />,
 
-    //children starts a new routing array whre the url directs to parent componet
-    // the path described in a children component, leads to its parent, and is displayed through an "<Outlet/>"
+    // "children" starts a nested route array — these paths render inside the parent component
+    // A child route's component is displayed inside the parent via <Outlet />
     children: [
       { index: true, element: <HomePage /> },
 
       { path: "products", element: <ProductPage /> },
-      //http://localhost:5173/products
-      // no matter what comes after the ":" it still leads to the same component
+      // Example: http://localhost:5173/products
+      // ":productName" is a dynamic segment — whatever comes after the slash still matches this route
       { path: "products/:productName", element: <ProductDetails /> },
-      //http://localhost:5173/products/whatever
+      // Example: http://localhost:5173/products/42
       { path: "about", element: <AboutPage /> },
     ],
   },
 
-  //wildcard "*" is used to catch all urlpaths that are not defined in the routing array.
+  // The wildcard "*" matches any URL not handled by the routes above (catch-all / 404 page)
 
   { path: "*", element: <h1>404 not found</h1> },
 ]);

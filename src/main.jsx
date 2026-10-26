@@ -2,12 +2,12 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
-// import router provider and our router "map"
+// Import RouterProvider and our router configuration ("map")
 import { RouterProvider } from "react-router-dom";
 import { myRouter } from "./router";
 
-// replace App.jsx with a router provider
-// through the prop "router" we tell routerprovider where it can find our routing map
+// RouterProvider replaces App.jsx as the root component
+// The "router" prop tells RouterProvider which routes to use
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={myRouter} />
